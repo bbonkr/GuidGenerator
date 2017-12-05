@@ -1,2 +1,0 @@
-# GuidGenerator
-GUID Generator
