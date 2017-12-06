@@ -1,5 +1,6 @@
 import { Component, OnInit , ViewContainerRef} from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import * as UUID  from 'uuidjs';
 
 @Component({
   selector: 'app-generator',
@@ -20,7 +21,9 @@ export class GeneratorComponent implements OnInit {
   }
 
   generate():void{
-    this.generatedGuid = `${this.getHexFourTime()}${this.getHexFourTime()}-${this.getHexFourTime()}-${ this.getHexFourTime()}-${this.getHexFourTime()}-${ this.getHexFourTime()}${ this.getHexFourTime()}${ this.getHexFourTime()}`;
+    this.generatedGuid = UUID.generate();
+    
+    //`${this.getHexFourTime()}${this.getHexFourTime()}-${this.getHexFourTime()}-${ this.getHexFourTime()}-${this.getHexFourTime()}-${ this.getHexFourTime()}${ this.getHexFourTime()}${ this.getHexFourTime()}`;
   }
 
   getHexFourTime(): String {
