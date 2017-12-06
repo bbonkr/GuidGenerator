@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div class=\"container\">\n  <div class=\"page-header\">\n      <h1>{{ title }}</h1>\n  </div>\n      \n  <app-generator></app-generator>\n</div>\n\n\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n<div class=\"container\">\r\n  <div class=\"page-header\">\r\n      <h1>{{ title }}</h1>\r\n  </div>\r\n      \r\n  <app-generator></app-generator>\r\n</div>\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -145,7 +145,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/generator/generator.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col col-md-12\">\n      <div class=\"form-group\">\n          <button class=\"btn btn-primary\" (click)=\"generate()\">Generate</button>\n      </div>\n\n      <div class=\"form-group\">\n        <div class=\"input-group\">\n            <input type=\"text\" id=\"resultTextBox\" class=\"form-control\" readonly value=\"{{generatedGuid}}\" placeholder=\"xxxxxxxx-xxxx-xxxx-xxxxxxxxxxxx\"/>\n            <span class=\"input-group-btn\">\n              <button class=\"btn btn-secondary copy-clipboard\" ngxClipboard [cbContent]=\"generatedGuid\" (cbOnSuccess)=\"onSucceed()\" [disabled]=\"!generatedGuid\">Copy</button>\n            </span>\n        </div>\n          \n      </div>\n  </div>\n</div>\n\n\n\n"
+module.exports = "<div class=\"row\">\r\n  <div class=\"col col-md-12\">\r\n      <div class=\"form-group\">\r\n          <button class=\"btn btn-primary\" (click)=\"generate()\">Generate</button>\r\n      </div>\r\n\r\n      <div class=\"form-group\">\r\n        <div class=\"input-group\">\r\n            <input type=\"text\" id=\"resultTextBox\" class=\"form-control\" readonly value=\"{{generatedGuid}}\" placeholder=\"xxxxxxxx-xxxx-xxxx-xxxxxxxxxxxx\"/>\r\n            <span class=\"input-group-btn\">\r\n              <button class=\"btn btn-secondary copy-clipboard\" ngxClipboard [cbContent]=\"generatedGuid\" (cbOnSuccess)=\"onSucceed()\" [disabled]=\"!generatedGuid\">Copy</button>\r\n            </span>\r\n        </div>\r\n          \r\n      </div>\r\n  </div>\r\n</div>\r\n\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -156,6 +156,8 @@ module.exports = "<div class=\"row\">\n  <div class=\"col col-md-12\">\n      <d
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GeneratorComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ngx_toastr__ = __webpack_require__("../../../../ngx-toastr/toastr.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_uuidjs__ = __webpack_require__("../../../../uuidjs/src/uuid.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_uuidjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_uuidjs__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -167,6 +169,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var GeneratorComponent = (function () {
     function GeneratorComponent(toastr) {
         this.toastr = toastr;
@@ -175,7 +178,8 @@ var GeneratorComponent = (function () {
     GeneratorComponent.prototype.ngOnInit = function () {
     };
     GeneratorComponent.prototype.generate = function () {
-        this.generatedGuid = "" + this.getHexFourTime() + this.getHexFourTime() + "-" + this.getHexFourTime() + "-" + this.getHexFourTime() + "-" + this.getHexFourTime() + "-" + this.getHexFourTime() + this.getHexFourTime() + this.getHexFourTime();
+        this.generatedGuid = __WEBPACK_IMPORTED_MODULE_2_uuidjs__["generate"]();
+        //`${this.getHexFourTime()}${this.getHexFourTime()}-${this.getHexFourTime()}-${ this.getHexFourTime()}-${this.getHexFourTime()}-${ this.getHexFourTime()}${ this.getHexFourTime()}${ this.getHexFourTime()}`;
     };
     GeneratorComponent.prototype.getHexFourTime = function () {
         return Math.floor((1 + Math.random()) * 0x10000)
